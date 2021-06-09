@@ -1,10 +1,10 @@
-%%Parameter file - returns a struct sc
-%%Enter all parameters for the satellite here and call it in the main model
-%%Create a unique param file for each satellite
+  function [sc] = param_satellite()
 
-
-%%  
-function [sc] = param_satellite()
+  
+%% File to list all the Parameters for satellite AOCS simulation - returns a struct sc
+% Only this file needs to be edited by the user
+% Enter all parameters for the satellite here
+% Create a unique param file for each satellite
 
 %----------Satellite Paramaters-----------------------------
 sc.ID = 'SCOOB-2';
@@ -34,7 +34,7 @@ sc.oe             = [sc.a sc.e sc.i sc.raan sc.ap sc.ta];
 sc.start_time     = [2022 11 10 1 1 1];  %Start Epoch
 sc.end_time       = [2022 11 10 5 1 1]; 
 sc.period         = 2*pi*sqrt(((sc.a)^3)/3.986e14);
-sc.timestep       = 0.1;	%in seconds
+sc.timestep       = 0.5;	%in seconds
 sc.q_init         = [0.5;0.5;0.5;0.5];	%initial quaternion
 sc.omega_init_deg = [0.005;0.001;0.002];	%deg/s for deployed
 
@@ -64,7 +64,7 @@ sc.sensors.Gyro_SNR    = 30;
 sc.use_EKF = 1;
 
 %% ACS parameters
-sc.ACSmode = 'TargetPointing';    
+sc.ACSmode = 'None';    
 
 J_RW = [0.00000820  0   0;
         0   0.00000820  0;

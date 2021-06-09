@@ -4,31 +4,17 @@ function datetime = JD2Date( jd, structOut )
 %   Compute the calendar date from the Julian date. Uses the format
 %   from clock. If no inputs are given it will output the current
 %   date and time of the function call.
-%-------------------------------------------------------------------------------
-%   Form:
-%   datetime = JD2Date( jd, structOut )
-%-------------------------------------------------------------------------------
-%
-%   ------
-%   Inputs
-%   ------
+
+% INPUTS:
 %   jd           (1,1)  Julian date
 %   structOut    (1,1)  If entered, output a structure
 %
-%   -------
-%   Outputs
-%   -------
+% OUTPUTS:
 %   datetime     (1,6)  [year month day hour minute seconds]
-%
-%-------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------
 %   References: Montenbruck, O., T.Pfleger, Astronomy on the Personal
 %               Computer, Springer-Verlag, Berlin, 1991, p. 13.
-%-------------------------------------------------------------------------------
-%   Copyright (c) 1993 Princeton Satellite Systems, Inc.
-%   All rights reserved.
-%-------------------------------------------------------------------------------
+
 
 if( nargin < 1 )
   jd = [];

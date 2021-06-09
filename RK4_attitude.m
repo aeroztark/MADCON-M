@@ -1,6 +1,7 @@
 
 function[new_w,new_q] = RK4_v2(I,w,torque,q,dt)
 
+% Function to propagate attitude by integrating dynamics & kinematics equations through RK4 
 
 %   Implementing RK4 for updating angular velocity
     k1 = w_dot(I,w,torque);

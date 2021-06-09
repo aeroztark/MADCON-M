@@ -1,6 +1,5 @@
 function [lat,lon,alt] = ECI2LLA(r_eci,jd_time)
     %This function computes LLA from ECI coordinates
-    % PSS toolbox functions are used for quick prototyping
     
     %INPUT: r_eci in 3x1
     %       time in juliandate

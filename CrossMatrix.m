@@ -1,8 +1,6 @@
-%This function will produce cross product matrix for a vector A
-
-%vector can be 3x1 or 1x3, does not matter
-
 function[cross_mat] = CrossMatrix( A )
+%This function generates cross product matrix for a vector A
+%vector can be 3x1 or 1x3, does not matter
 
 Ax = A(1);
 Ay = A(2);

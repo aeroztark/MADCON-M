@@ -1,8 +1,8 @@
-%calculate the quaternion error in term of angle
-%input 4x1 true quaternion and measured quaternion with q(1) being scalar
-%output angular vector in degree
-
 function [ error_angle ] = QuatError(q_true, q_est)
+
+% Calculates the quaternion error in terms of angle
+% INPUTS: 4x1 true quaternion and measured quaternion with q(1) being scalar
+% OUTPUTS: 3x1 angle vector in degrees
 
 q_est_T = [q_est(:,1) -q_est(:,2) -q_est(:,3) -q_est(:,4)]; % quaternion transpose
 

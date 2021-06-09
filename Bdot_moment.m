@@ -1,8 +1,10 @@
 
+function [control_m] = Bdot_moment(magb_noisy,ang_velocity,K,max_dipole)
+
+% Computes control torque/ moment from Bdot algorithm 
 %reference: Magnetic satellite detumbling: the b-dot algorithm revisited,
 % by Marco Lovera
 
-function [control_m] = Bdot_moment(magb_noisy,ang_velocity,K,max_dipole)
 
 B_dot = cross(magb_noisy,ang_velocity); %derovative of body frame mag vector
 

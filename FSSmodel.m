@@ -1,8 +1,6 @@
-%FSS model
-
-%created by Sarthak Srivastava 16-01-2020
-
 function [FSS_sunvector] = FSSmodel(sunb_true,max_err_angle,FSS_SNR,eclipse_flag)
+
+% Sun Sensor model
 
 %model: FSS output = (true body sunvector + rand error rotation) + AWG
 

@@ -1,6 +1,8 @@
+function[P_k1_pred, q_k1_pred] = RK4_MEKF(omega_est,gyro_ARW,P_k,quat_k,dt)
+
 % Runge-Kutta 4th order integration of covariance matrix and quaternion
 % derivatives to obtain propagated (a priori) values of P and q for next
-% step
+% step (Multiplicative Extended Kalman Filter)
 
 % INPUTS:
 % omega_est:
@@ -12,9 +14,6 @@
 % OUTPUTS:
 %P_k1_pred: propagated P matrix (6x6)
 %q_k1_pred: propagated quaternion (scalar component is first element) (4x1)
-
-
-function[P_k1_pred, q_k1_pred] = RK4_MEKF(omega_est,gyro_ARW,P_k,quat_k,dt)
 
 F = [-CrossMatrix(omega_est)    -eye(3);
          zeros(3)             zeros(3)];

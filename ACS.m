@@ -5,7 +5,11 @@ function[RW_torque, MTR_torque] = ACS(ACSmode,q,q_d,omega, omega_d,omega_dot_d,g
 % INPUTS: ACSmode (string) - specify the ACS operational mode
            % None, Idle, SunPointing, TargetPointing, NadirPointing
            % q -> (4x1) - current attitude quaternion
-           % q_d -> (4x1)
+           % q_d -> (4x1)- desired attitude quaternion
+           % omega -> (3x1) - current satellite body rate (rad/s)
+           % omega_d -> (3x1) - desired satellite body rate (rad/s)
+           % omega_dot_d -> (3x1) - desired satellite body angular acceleration (rad/s^2)
+           % gains -> struct contaning all the P-D gains
 % OUTPUTS: RW_torque (3x1 vector) - sum of all reaction wheel torques
 %          MTR_torque (3x1 vector) - sum of torques from all torque rods
 

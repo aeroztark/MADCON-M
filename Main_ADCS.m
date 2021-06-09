@@ -2,17 +2,6 @@
 %----------------------------------------------------------------------------- 
 %% ADCS simulation - Main file
 %Created by: Sarthak Srivastava
-%--------------------------------------------------------------------------
-% Known issues:
-% SOLVED IGRF valid only till 2020. Update coeff w/o sacrificing code speed
-% 2. Vectorization - can some parts be vectorized?
-% 3. Use better density model
-% 4. Check attitude error angle validity
-% 5. Modify sensor models
-% 7. Eclipse modeling on CSS, FSS, QUEST, EKF
-
-
-
 
 %%
 %--------------------------------------------------------------------------
@@ -122,7 +111,6 @@ for count = 1:1:count_max
      accel.totalgravity(count,:) = accel.pointEarth(count,:) + accel.nonsphEarth(count,:);
      accel.drag(count,:)         = a_drag';    
      accel.SRP(count,:)          = a_SRP';
-     accel.thruster(count,:)     = a_thruster; 
      
 % Calculate Atmospheric density 
     rho(count+1) = AtmDens2(OP.alt(count)/1000);
@@ -214,7 +202,7 @@ for count = 1:1:count_max
 
 %% Accounting torques
 % Computing Disturbance torques for attitude dynamics    
-    [disturbance.torque_total(count,:),disturbance.SRP(count),disturbance.aero(count),disturbance.magnetic(count),disturbance.gg(count),disturbance.thruster(count)] = disturbance_torques(sc.d,sc.m,sc.I,sc.D,sc.a,accel.drag(count,:),accel.SRP(count,:),accel.thruster(count,:),vectors.mag_b_true(count,:),OP.r_eci(count,:)');
+    [disturbance.torque_total(count,:),disturbance.SRP(count),disturbance.aero(count),disturbance.magnetic(count),disturbance.gg(count)] = disturbance_torques(sc.d,sc.m,sc.I,sc.D,sc.a,accel.drag(count,:),accel.SRP(count,:),vectors.mag_b_true(count,:),OP.r_eci(count,:)');
 
 % Getting control torques from ACS algorithm
     [RW_torque(:,count), MTR_torque(:,count)] = ACS(sc.ACSmode,attitude.est_q(count,1:4)',sc.q_d,omega(count,1:3)',sc.omega_d,[0;0;0],sc.gains);

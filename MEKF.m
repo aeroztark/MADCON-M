@@ -1,3 +1,5 @@
+function[q_k,b_k,omega_est,P_k1_pred,q_k1_pred,error_vector,P_k]  =  MEKF(gyro_output,gyro_ARW,b_k0,FSS_output,FSS_stdev,MAG_output, MAG_stdev,prev_quat,P_k0, sun_eci, mag_eci,SS_avail,MAG_avail,dt)
+
 
 %Multiplicative quaternion based state error extended Kalman filter 
 
@@ -20,9 +22,6 @@
 %         omega_est:    estimated omega for current step - row vector in deg/s
 %         P_k1_pred:    propagated covariance matrix (a priori) for next step
 %         q_k1_pred:    propagated quaternion (a priori) for next step
-
-
-function[q_k,b_k,omega_est,P_k1_pred,q_k1_pred,error_vector,P_k]  =  MEKF(gyro_output,gyro_ARW,b_k0,FSS_output,FSS_stdev,MAG_output, MAG_stdev,prev_quat,P_k0, sun_eci, mag_eci,SS_avail,MAG_avail,dt)
 
 q_k0        = prev_quat';  %making col vector
 gyro_output =  (gyro_output*(pi/180))';    %converting gyro reading to rad/s and making column vector

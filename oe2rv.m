@@ -1,12 +1,11 @@
+function [R_eci, V_eci] = oe2rv(orbital_elements) %returns 3x1 vectors r and v
 %{
 
-Convert a set of Orbital Elements (a,e,i,RAAN,w,v) to a State Vector (R,V)
+
+Converts a set of Orbital Elements (a,e,i,RAAN,w,v) to a State Vector (R,V)
 
 Reference: Orbital Mechanics for Engineering Students by H. Curtis
 
-%}
-function [R_eci, V_eci] = oe2rv(orbital_elements) %returns 3x1 vectors r and v
-%{
 INPUTS: pay attention to the order!
     'a'     Semimajor Axis [m]
     'e'     Eccentricity Magnitude

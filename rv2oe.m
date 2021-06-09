@@ -53,14 +53,7 @@
 % References:
 %-------------
 %Vallado,D. Fundamentals of Astrodynamics and Applications. 2007.
-%
-% Function Dependencies:
-%------------------
-%None
-%------------------------------------------------------------------       %
-% Programed by Darin Koblick  03-04-2012                                  %
-% Updated to address circular equatorial orbits       12/12/2013          %
-%------------------------------------------------------------------       %
+
 function [a,eMag,i,O,o,nu,truLon,argLat] = rv2oe(r,v)
 
 mu = 398600;

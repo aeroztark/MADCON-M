@@ -1,4 +1,7 @@
 function[vdot] = vdot(r,v,A,Cd,m,rho,DCM,eclipse,sunb)
+
+% Function to copute total acceleration
+
     global a_point a_nonsphEarth a_drag a_SRP a_thruster
     [a_point,a_nonsphEarth] = gravitymodel(r);
     a_gravity = a_point + a_nonsphEarth;

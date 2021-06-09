@@ -1,9 +1,10 @@
+function[u_SunEarth] = sunmodel2(jdate)
+
 % Another sun model based on algorithm in Markeley, Crassidis. 
 %This sun model is simpler and yield results similar to the elaborate on being used currently
 % Kept as backup
 
 
-function[u_SunEarth] = sunmodel2(jdate)
 %input: juliandate
 
 

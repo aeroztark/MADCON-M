@@ -1,11 +1,23 @@
-
-
-%inputs:
-
-
-%outputs: q_k1: filtered quaternion for next step (1 x 4)
-%         P_k1: covariance matrix for next step   (3 x 3)
 function[q_k1,P_k1]  =  EKF(gyro_output,prev_quat,P_k0,gyro_ARW,FSS_stdev, MAG_stdev, sun_eci, mag_eci, FSS_output, MAG_output, dt)
+
+% Extended Kalman Filter implementation for quaternion estimation, using Wertz
+
+% INPUTS: gyro_output -> current satellite angular rate (deg/s)
+%          prev_quat -> previous timestep quaternion
+%          P_k0 -> previous timestep covariance matrix
+%          gyro_ARW -> gyro angular random walk
+%          FSS_stdev -> sun sensor standard deviation
+%          MAG_stdev -> magnetometer standard deviation
+%          sun_eci -> ECI sun vector
+%          mag_eci -> ECI magnetic field vector
+%          FSS_output -> Body frame sun vector as measured by sensors 
+%          MAG_output -> Body frame mag vector as measured by sensors
+%          dt -> timestep
+
+
+%OUTPUTS: q_k1: filtered quaternion for next step (1 x 4)
+%         P_k1: covariance matrix for next step   (3 x 3)
+
 
 q_k0        = prev_quat';  %making col vector
 % converting degrees to rad

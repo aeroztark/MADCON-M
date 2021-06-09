@@ -1,5 +1,7 @@
-
 function [a_drag] = dragmodel(r_eci,v_eci,sc_area,sc_Cd,sc_mass,rho,DCM)
+
+% Computes acceleration due to atmospheric drag
+
     % INPUTS: r_eci,v_eci -> vectors as 1x3 or 3x1 in SI units
     %         sc_area in m^2, sc_Cd, sc_mass -> from param() file
     %         rho -> atmospheric density from a suitable density model
